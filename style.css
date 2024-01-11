@@ -105,6 +105,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+/* END OF RESET */
 
 /* GENERAL */
 /* font-family */
@@ -150,13 +151,15 @@ label {
 button {
     all: unset;
 }
+/* END OF GENERAL */
 
-/* HEADER */
+/* WEBSITE */
+/* Header */
 header img {
     margin: 2em auto;
 }
 
-/* MAIN CONTENT */
+/* Main */
 main {
     /* max-width: 375px; */
     background-color: var(--white);
@@ -167,10 +170,10 @@ main {
     padding: 2em 1.5em;
 }
 
-/* Box-1 */
+/* box-1 */
 /* Solution to place icon/img inside input field
 https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-form */
-.icon {
+.bill-input-icon {
     background-image: url(images/icon-dollar.svg);
     padding: 0 15px;
     background-size: 10px;
@@ -202,4 +205,46 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
     font-weight: 700; */
 }
 
-/* Box-2 */
+/* Solution to place icon/img inside input field
+https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-form */
+.people-input-icon {
+    background-image: url(images/icon-person.svg);
+    padding: 0 15px;
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: 15px 10px;
+}
+/* end of box-1 */
+
+/* box-2 */
+.box-2 {
+    background-color: var(--very-dark-cyan);
+    padding: 1.5em;
+}
+
+.result-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 3(1fr);
+}
+
+.box-2-tip {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box-2-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reset-btn {
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--strong-cyan);
+    color: var(--white);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: .25em;
+}
