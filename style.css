@@ -130,15 +130,25 @@ body {
 
 textarea,
 input {
+    width: 100%;
     border: none;
+    border-radius: 4px;
     outline: none;
-    font-size: 24px;
     background-color: var(--very-light-grayish-cyan);
+    color: var(--very-dark-cyan);
+    font-size: 24px;
+    font-weight: 700;
+
 }
 
 label {
     color: var(--grayish-cyan);
     font-weight: 700;
+    line-height: 2.4;
+}
+
+button {
+    all: unset;
 }
 
 /* HEADER */
@@ -148,18 +158,48 @@ header img {
 
 /* MAIN CONTENT */
 main {
+    /* max-width: 375px; */
     background-color: var(--white);
+    margin: auto;
 }
 
 .wrapper {
-    padding: 1.5em 1em;
+    padding: 2em 1.5em;
 }
 
+/* Box-1 */
 /* Solution to place icon/img inside input field
 https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-form */
 .icon {
     background-image: url(images/icon-dollar.svg);
-    padding-left: 25px;
-    background-size: 20px;
+    padding: 0 15px;
+    background-size: 10px;
     background-repeat: no-repeat;
+    background-position: 15px 10px;
 }
+
+.btn-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: .75em;
+}
+
+.btn {
+    border-radius: 4px;
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding: .25em;
+}
+
+.cust-btn {
+    background-color: var(--very-light-grayish-cyan);
+    color: var(--grayish-cyan);
+    /* font-size: 1.4rem;
+    font-weight: 700; */
+}
+
+/* Box-2 */
