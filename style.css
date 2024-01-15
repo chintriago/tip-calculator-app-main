@@ -184,7 +184,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
 }
 
 .bill-container {
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
 }
 
 .bill-input-icon {
@@ -201,7 +201,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: .75em;
-    margin-bottom: 1.5em;
+    margin-bottom: 2em;
 }
 
 .btn {
@@ -289,4 +289,54 @@ maybe putting it inside another span lol */
     font-weight: 700;
     padding: .25em 0;
     text-transform: uppercase;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 1024px) {
+
+    /* Header */
+    header img {
+        margin: 8em auto 6em;
+    }
+
+    /* Main */
+    main {
+        max-width: 65%;
+        border-radius: 25px;
+    }
+
+    .wrapper {
+        display: flex;
+        column-gap: 4em;
+        padding: 2em 2.25em;
+    }
+
+    /* Box 1 */
+    .box-1 {
+        width: 50%;
+    }
+
+    .btn-container {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    /* box-2 */
+    .box-2 {
+        width: 50%;
+        padding: 2em 2.5em;
+    }
+
+    .result-container {
+        height: 100%;
+        grid-template-rows: auto auto .8fr;
+    }
+
+    .box-2-btn {
+        align-self: end;
+    }
+
+    .price-span {
+        font-size: 2.8rem;
+    }
 }
