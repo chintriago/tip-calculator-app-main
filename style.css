@@ -105,6 +105,7 @@ input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+
 /* END OF RESET */
 
 /* GENERAL */
@@ -230,6 +231,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
     background-position: 15px 15px;
     border-radius: 4px;
 }
+
 /* end of box-1 */
 
 /* box-2 */
@@ -248,13 +250,14 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
 .box-2-tip {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
+    padding-top: 1em;
 }
 
 .box-2-total {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .result-container p {
@@ -267,6 +270,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
     font-size: .8rem;
     font-weight: 700;
 }
+
 /* REMINDER: I need to make the dollar sign in price span smaller
 maybe putting it inside another span lol */
 .price-span {
@@ -283,6 +287,6 @@ maybe putting it inside another span lol */
     text-align: center;
     font-size: 1.3rem;
     font-weight: 700;
-    padding: .25em;
+    padding: .25em 0;
     text-transform: uppercase;
 }
