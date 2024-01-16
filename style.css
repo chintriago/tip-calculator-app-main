@@ -151,6 +151,10 @@ label {
     line-height: 2.4;
 }
 
+::placeholder {
+    color: var(--grayish-cyan);
+}
+
 button {
     all: unset;
 }
@@ -211,7 +215,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
     text-align: center;
     font-size: 1.4rem;
     font-weight: 700;
-    padding: .25em;
+    padding: .3em 0;
 }
 
 .cust-btn {
@@ -271,8 +275,6 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
     font-weight: 700;
 }
 
-/* REMINDER: I need to make the dollar sign in price span smaller
-maybe putting it inside another span lol */
 .price-span {
     color: var(--strong-cyan);
     font-size: 1.8rem;
@@ -287,8 +289,12 @@ maybe putting it inside another span lol */
     text-align: center;
     font-size: 1.3rem;
     font-weight: 700;
-    padding: .25em 0;
+    padding: .3em 0;
     text-transform: uppercase;
+}
+
+.tinted {
+    opacity: 0.15;
 }
 
 /* MEDIA QUERIES */
