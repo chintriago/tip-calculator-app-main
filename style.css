@@ -221,11 +221,19 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
 .cust-btn {
     background-color: var(--very-light-grayish-cyan);
     color: var(--grayish-cyan);
-    /* font-size: 1.4rem;
-    font-weight: 700; */
 }
 
-/* Solution to place icon/img inside input field
+/* Solution to keep custom text centered inside input/cust-btn then when clicked input field is right aligned.
+https://stackoverflow.com/questions/6729837/text-align-right-only-for-placeholder */
+.cust-btn:focus {
+    text-align: right;
+}
+
+.cust-btn::placeholder {
+    text-align: center;
+}
+
+/* Solution to place icon/img inside input field.
 https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-form */
 .people-input-icon {
     background-image: url(images/icon-person.svg);
