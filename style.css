@@ -1,4 +1,5 @@
 /* RESET */
+
 /* https://piccalil.li/blog/a-more-modern-css-reset/ */
 /* Firefox */
 input[type=number] {
@@ -109,6 +110,7 @@ input::-webkit-inner-spin-button {
 /* END OF RESET */
 
 /* GENERAL */
+
 /* font-family */
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
 
@@ -141,8 +143,11 @@ input {
     font-size: 24px;
     font-weight: 700;
     text-align: right;
+}
 
-
+input:active,
+input:focus {
+    border: 2px solid var(--strong-cyan);
 }
 
 label {
@@ -157,11 +162,18 @@ label {
 
 button {
     all: unset;
+    cursor: pointer;
+}
+
+button:active {
+    background-color: var(--light-grayish-cyan);
+    opacity: initial;
 }
 
 /* END OF GENERAL */
 
 /* WEBSITE */
+
 /* Header */
 header img {
     margin: 2em auto;
@@ -180,7 +192,7 @@ main {
 }
 
 /* box-1 */
-/* Solution to place icon/img inside input field
+/* Solution to place icon/img inside input field.
 https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-form */
 
 .box-1 {
@@ -223,7 +235,8 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
     color: var(--grayish-cyan);
 }
 
-/* Solution to keep custom text centered inside input/cust-btn then when clicked input field is right aligned.
+/* Solution to keep custom text centered inside input/cust-btn then when clicked
+ input field is right aligned.
 https://stackoverflow.com/questions/6729837/text-align-right-only-for-placeholder */
 .cust-btn:focus {
     text-align: right;
@@ -304,6 +317,8 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
 .tinted {
     opacity: 0.15;
 }
+
+/* END OF WEBSITE */
 
 /* MEDIA QUERIES */
 @media screen and (min-width: 1024px) {
