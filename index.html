@@ -10,6 +10,24 @@
   <title>Frontend Mentor | Tip calculator app</title>
 </head>
 
+<!-- <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.btn-js');
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        // Remove 'active' class from all buttons
+        buttons.forEach(function (btn) {
+          btn.classList.remove('active');
+        });
+
+        // Add 'active' class to the clicked button
+        button.classList.add('active');
+      });
+    });
+  });
+</script> -->
+
 <body>
   <header>
     <img src="images/logo.svg" alt="">
@@ -20,23 +38,22 @@
         <form>
           <div class="bill-container">
             <label for="bill">Bill</label>
-            <input type="number" class="bill-input-icon" id="bill" name="bill" value="$" placeholder="0"><br>
+            <input type="number" id="bill" class="bill-input-icon" name="bill" placeholder="0"><br>
           </div>
           <div class="tip-container">
-            <label for="tip">Select Tip %</label>
+            <div class="tip-label">Select Tip %</div>
             <div class="btn-container">
-              <button class="btn">5%</button>
-              <button class="btn">10%</button>
-              <button class="btn">15%</button>
-              <button class="btn">25%</button>
-              <button class="btn">50%</button>
-              <input type="number" class="btn cust-btn" id="custom" name="custom" value="$" placeholder="Custom">
-              <!-- <button class="cust-btn btn">Custom</button> -->
+              <button id="btn-5" class="btn btn-js" value=".5">5%</button>
+              <button id="btn-10" class="btn btn-js" value=".10">10%</button>
+              <button id="btn-15" class="btn btn-js" value=".15">15%</button>
+              <button id="btn-25" class="btn btn-js" value=".25">25%</button>
+              <button id="btn-50" class="btn btn-js" value=".50">50%</button>
+              <input type="number" id="custom" class="btn cust-btn" name="custom" placeholder="Custom">
             </div>
           </div>
           <div class="people-container">
             <label for="people">Number of People</label>
-            <input type="number" id="people" class="people-input-icon" name="people" value="Doe" placeholder="0">
+            <input type="number" id="people" class="people-input-icon" name="people" placeholder="0">
           </div>
         </form>
       </section>
@@ -51,7 +68,7 @@
             <span class="price-span"><small>$</small>0.00</span>
           </section>
           <section class="box-2-btn">
-            <button class="reset-btn tinted">Reset</button>
+            <button id="reset" class="reset-btn tinted">Reset</button>
           </section>
         </div>
       </section>
