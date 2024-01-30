@@ -19,7 +19,7 @@ function tipCalculator(cost, percent, number) {
     // need to make this work only when all three have values
     // of grerater than 0
     if (cost > 0 && percent > 0 && number > 0) {
-        reset.classList.toggle('tinted');
+        reset.classList.remove('tinted');
         tipPerson = (cost * percent) / number;
         tipPerson = tipPerson.toFixed(2);
         totalPerson = ((cost * percent) + cost) / number;
@@ -28,6 +28,18 @@ function tipCalculator(cost, percent, number) {
         totalSpan.innerHTML = "$" + totalPerson;
         console.log("Tip amount / person is " + tipPerson);
         console.log("Total / person is " + totalPerson);
+        reset.addEventListener('click', function (event) {
+            event.preventDefault();
+            reset.classList.add('tinted');
+            tipSpan.innerHTML = "$" + "0.00";
+            totalSpan.innerHTML = "$" + "0.00";
+            cost.value = 0;
+            percent.value = 0;
+            number.value = 0;
+            // working here last.
+            // possible solution is to make reset button
+            // an input with type reset
+        });
     }
 }
 
