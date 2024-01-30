@@ -4,18 +4,31 @@ let btnValue = 0;
 let customValue = 0;
 let peopleValue = 0;
 let result = 0;
+let tipPerson = 0;
+let totalPerson = 0;
 
 // calculates cost times percentage then divides by number of people
 // only if all variable have a numerical value higher than 0
 // found solution below
 // https://stackoverflow.com/questions/68308011/looking-for-a-way-to-calculate-2-of-3-input-fields-in-realtime-using-javascript
 const reset = document.querySelector('#reset');
+const tipSpan = document.querySelector('#tip');
+const totalSpan = document.querySelector('#total');
 
 function tipCalculator(cost, percent, number) {
-    reset.classList.toggle('tinted');
-    result = (cost * percent) / number;
-    result = result.toFixed(2);
-    console.log("total is " + result);
+    // need to make this work only when all three have values
+    // of grerater than 0
+    if (cost > 0 && percent > 0 && number > 0) {
+        reset.classList.toggle('tinted');
+        tipPerson = (cost * percent) / number;
+        tipPerson = tipPerson.toFixed(2);
+        totalPerson = ((cost * percent) + cost) / number;
+        totalPerson = totalPerson.toFixed(2);
+        tipSpan.innerHTML = "$" + tipPerson;
+        totalSpan.innerHTML = "$" + totalPerson;
+        console.log("Tip amount / person is " + tipPerson);
+        console.log("Total / person is " + totalPerson);
+    }
 }
 
 // makes all button elements toggle a background color.
@@ -42,7 +55,7 @@ const bill = document.querySelector('#bill');
 bill.addEventListener('input', function (event) {
     // event.preventDefault();
     billValue = parseFloat(bill.value);
-    console.log(billValue);
+    // console.log(billValue);
     tipCalculator(billValue, btnValue, peopleValue);
 });
 
@@ -53,7 +66,7 @@ for (let i = 0; i < buttonsList.length; i++) {
         event.preventDefault();
         if (buttonsList[i].classList.contains('active')) {
             btnValue = parseFloat(buttonsList[i].value);
-            console.log(btnValue);
+            // console.log(btnValue);
             tipCalculator(billValue, btnValue, peopleValue);
         }
     });
@@ -64,7 +77,7 @@ const custom = document.querySelector("#custom");
 custom.addEventListener('input', function () {
     customValue = parseFloat(custom.value);
     customValue = (customValue / 100);
-    console.log(customValue);
+    // console.log(customValue);
     tipCalculator(billValue, customValue, peopleValue);
 });
 
@@ -72,6 +85,6 @@ custom.addEventListener('input', function () {
 const people = document.querySelector("#people");
 people.addEventListener('input', function () {
     peopleValue = parseFloat(people.value);
-    console.log(peopleValue);
+    // console.log(peopleValue);
     tipCalculator(billValue, btnValue, peopleValue);
 });
