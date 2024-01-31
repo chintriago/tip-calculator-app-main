@@ -16,8 +16,6 @@ const tipSpan = document.querySelector('#tip');
 const totalSpan = document.querySelector('#total');
 
 function tipCalculator(cost, percent, number) {
-    // need to make this work only when all three have values
-    // of grerater than 0
     if (cost > 0 && percent > 0 && number > 0) {
         reset.classList.remove('tinted');
         tipPerson = (cost * percent) / number;
