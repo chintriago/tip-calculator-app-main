@@ -15,29 +15,27 @@
     <img src="images/logo.svg" alt="">
   </header>
   <main>
-    <div class="wrapper">
+    <form>
       <section class="box-1">
-        <form>
-          <div class="bill-container">
-            <label for="bill">Bill</label>
-            <input type="number" id="bill" class="bill-input-icon" name="bill" placeholder="0"><br>
+        <div class="bill-container">
+          <label for="bill">Bill</label>
+          <input type="number" id="bill" class="bill-input-icon" name="bill" placeholder="0"><br>
+        </div>
+        <div class="tip-container">
+          <div class="tip-label">Select Tip %</div>
+          <div class="btn-container">
+            <button id="btn-5" class="btn btn-js" value=".5">5%</button>
+            <button id="btn-10" class="btn btn-js" value=".10">10%</button>
+            <button id="btn-15" class="btn btn-js" value=".15">15%</button>
+            <button id="btn-25" class="btn btn-js" value=".25">25%</button>
+            <button id="btn-50" class="btn btn-js" value=".50">50%</button>
+            <input type="number" id="custom" class="btn cust-btn" name="custom" placeholder="Custom">
           </div>
-          <div class="tip-container">
-            <div class="tip-label">Select Tip %</div>
-            <div class="btn-container">
-              <button id="btn-5" class="btn btn-js" value=".5">5%</button>
-              <button id="btn-10" class="btn btn-js" value=".10">10%</button>
-              <button id="btn-15" class="btn btn-js" value=".15">15%</button>
-              <button id="btn-25" class="btn btn-js" value=".25">25%</button>
-              <button id="btn-50" class="btn btn-js" value=".50">50%</button>
-              <input type="number" id="custom" class="btn cust-btn" name="custom" placeholder="Custom">
-            </div>
-          </div>
-          <div class="people-container">
-            <label for="people">Number of People</label>
-            <input type="number" id="people" class="people-input-icon" name="people" placeholder="0">
-          </div>
-        </form>
+        </div>
+        <div class="people-container">
+          <label for="people">Number of People</label>
+          <input type="number" id="people" class="people-input-icon" name="people" placeholder="0">
+        </div>
       </section>
       <section class="box-2">
         <div class="result-container">
@@ -50,11 +48,11 @@
             <span id="total" class="price-span"><small>$</small>0.00</span>
           </section>
           <section class="box-2-btn">
-            <button id="reset" class="reset-btn tinted">Reset</button>
+            <button type="reset" id="reset" class="reset-btn tinted">Reset</button>
           </section>
         </div>
       </section>
-    </div>
+    </form>
   </main>
   <script src="script.js"></script>
 </body>

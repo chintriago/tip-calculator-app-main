@@ -154,10 +154,15 @@ input {
     border: 2px solid rgba(0, 0, 0, 0)
 }
 
-input:active,
-input:focus,
-input:hover {
+input:focus, input:active {
     border: 2px solid var(--strong-cyan);
+}
+
+button:active {
+    background-color: var(--light-grayish-cyan);
+    /* will play with transition later
+    also add a button pressed shadow */
+    /* transition: ease-out 10ms; */
 }
 
 label,
@@ -193,7 +198,7 @@ main {
     border-radius: 25px 25px 0 0;
 }
 
-.wrapper {
+form {
     padding: 2.5em 2.25em;
 }
 
@@ -344,7 +349,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
         border-radius: 25px;
     }
 
-    .wrapper {
+    form {
         max-height: 459.64px;
         display: flex;
         column-gap: 4em;
