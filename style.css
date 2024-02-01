@@ -147,10 +147,17 @@ input {
     text-align: right;
 }
 
+/* solution to disable height increase when
+all inputs get a border from hover
+focus and active */
+input {
+    border: 2px solid rgba(0, 0, 0, 0)
+}
+
 input:active,
 input:focus,
 input:hover {
-    border: 1px solid var(--strong-cyan);
+    border: 2px solid var(--strong-cyan);
 }
 
 label,
@@ -324,7 +331,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
 /* END OF WEBSITE */
 
 /* MEDIA QUERIES */
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 950px) {
 
     /* Header */
     header img {
@@ -333,11 +340,12 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
 
     /* Main */
     main {
-        max-width: 60%;
+        max-width: 900px;
         border-radius: 25px;
     }
 
     .wrapper {
+        max-height: 459.64px;
         display: flex;
         column-gap: 4em;
         padding: 2em 2.25em;
