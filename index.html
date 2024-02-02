@@ -15,7 +15,7 @@
     <img src="images/logo.svg" alt="">
   </header>
   <main>
-    <form>
+    <form id="tip-form">
       <section class="box-1">
         <div class="bill-container">
           <label for="bill">Bill</label>
@@ -24,12 +24,12 @@
         <div class="tip-container">
           <div class="tip-label">Select Tip %</div>
           <div class="btn-container">
-            <button id="btn-5" class="btn btn-js" value=".5">5%</button>
-            <button id="btn-10" class="btn btn-js" value=".10">10%</button>
-            <button id="btn-15" class="btn btn-js" value=".15">15%</button>
-            <button id="btn-25" class="btn btn-js" value=".25">25%</button>
-            <button id="btn-50" class="btn btn-js" value=".50">50%</button>
-            <input type="number" id="custom" class="btn cust-btn" name="custom" placeholder="Custom">
+            <button class="btn btn-js" value=".5">5%</button>
+            <button class="btn btn-js" value=".10">10%</button>
+            <button class="btn btn-js" value=".15">15%</button>
+            <button class="btn btn-js" value=".25">25%</button>
+            <button class="btn btn-js" value=".50">50%</button>
+            <input type="number" id="custom-button" class="btn cust-btn" placeholder="Custom">
           </div>
         </div>
         <div class="people-container">
@@ -41,14 +41,14 @@
         <div class="result-container">
           <section class="box-2-tip">
             <p>Tip Amount<span class="person-span">/ person</span></p>
-            <span id="tip" class="price-span"><small>$</small>0.00</span>
+            <span id="tip" class="price-span">$0.00</span>
           </section>
           <section class="box-2-total">
             <p>Total<span class="person-span">/ person</span></p>
-            <span id="total" class="price-span"><small>$</small>0.00</span>
+            <span id="total" class="price-span">$0.00</span>
           </section>
           <section class="box-2-btn">
-            <button type="reset" id="reset" class="reset-btn tinted">Reset</button>
+            <button type="reset" id="reset-button" class="reset-btn tinted">Reset</button>
           </section>
         </div>
       </section>
