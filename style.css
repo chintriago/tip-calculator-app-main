@@ -154,16 +154,10 @@ input {
     border: 2px solid rgba(0, 0, 0, 0)
 }
 
+
 input:focus,
 input:active {
     border: 2px solid var(--strong-cyan);
-}
-
-button:active {
-    background-color: var(--light-grayish-cyan);
-    /* will play with transition later
-    also add a button pressed shadow */
-    /* transition: ease-out 10ms; */
 }
 
 label,
@@ -180,6 +174,32 @@ label,
 button {
     all: unset;
     cursor: pointer;
+}
+
+button:active {
+    background-color: var(--light-grayish-cyan);
+}
+
+.bill-input-error {
+    display: none;
+    color: orange;
+}
+
+.people-input-error {
+    display: none;
+    color: orange;
+}
+
+.border-error {
+    /* I put !important so my javascript code can work.
+    If removed the 'input:focus' styling overrides the '.border-error' class.  */
+    border: 2px solid orange !important;
+
+}
+
+.label-wrapper {
+    display: flex;
+    justify-content: space-between;
 }
 
 /* END OF GENERAL */
@@ -212,7 +232,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
 }
 
 .bill-container {
-    margin-bottom: 2em;
+    margin-bottom: 1.25em;
 }
 
 .bill-input-icon {
@@ -229,7 +249,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     gap: .75em;
-    margin-bottom: 2em;
+    margin-bottom: 1.25em;
 }
 
 .btn {

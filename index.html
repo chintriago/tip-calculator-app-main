@@ -18,7 +18,10 @@
     <form id="tip-form">
       <section class="box-1">
         <div class="bill-container">
-          <label for="bill">Bill</label>
+          <div class="label-wrapper">
+            <label for="bill">Bill</label>
+            <label class="bill-input-error" for="bill">Can't be zero</label>
+          </div>
           <input type="number" id="bill" class="bill-input-icon" name="bill" placeholder="0"><br>
         </div>
         <div class="tip-container">
@@ -33,7 +36,10 @@
           </div>
         </div>
         <div class="people-container">
-          <label for="people">Number of People</label>
+          <div class="label-wrapper">
+            <label for="people">Number of People</label>
+            <label class="people-input-error" for="people">Can't be zero</label>
+          </div>
           <input type="number" id="people" class="people-input-icon" name="people" placeholder="0">
         </div>
       </section>

@@ -1,5 +1,8 @@
 const tipForm = document.querySelector('#tip-form');
 const bill = document.querySelector('#bill');
+const billInputError = document.querySelector('.bill-input-error')
+const people = document.querySelector("#people");
+const peopleInputError = document.querySelector('.people-input-error')
 const buttonsArray = document.querySelectorAll('.btn-js');
 const buttonsList = document.getElementsByClassName('btn-js');
 const customButton = document.querySelector("#custom-button");
@@ -15,7 +18,7 @@ let result = 0;
 let tipPerson = 0;
 let totalPerson = 0;
 
-// makes all button elements toggle a background color.
+// Makes all button elements toggle a background color.
 // Only one button can change at a time and when clicked.
 // If clicked anywhere else it does not disappear.
 buttonsArray.forEach(function (button) {
@@ -36,6 +39,10 @@ buttonsArray.forEach(function (button) {
     });
 });
 
+// CODE BELOW IS MAIN FUNCTIONALITY OF THE TIP CALCULATOR APP
+// IT NEEDS TO BE LAST IN FILE TO WORK PROPERLY
+
+// Function that loops through all buttons and removes styling classes.
 function removeButtonStyles() {
     for (let i = 0; i < buttonsList.length; i++) {
         buttonsList[i].classList.remove('active');
@@ -43,26 +50,10 @@ function removeButtonStyles() {
     }
 };
 
-// when custom button is clicked all other buttons active styling gets removed
-// learned to not put () after the name of your own function inside
-// the event listener solution found below
-// https://stackoverflow.com/questions/70920592/why-does-a-javascript-event-listener-function-need-to-be-wrapped-in-function-tag
-customButton.addEventListener('click', removeButtonStyles);
-
-// when reset button is clicked form is reset
-resetButton.addEventListener('click', function () {
-    removeButtonStyles();
-    tipForm.reset();
-});
-
-// CODE BELOW IS MAIN FUNCTIONALITY OF THE TIP CALCULATOR APP
-// IT NEEDS TO BE LAST IN FILE TO WORK PROPERLY
-
-// calculates cost times percentage then divides by number of people
-// only if all variable have a numerical value higher than 0
-// found solution below
+// Funciton that calculates cost times percentage then divides by number of people
+// only if all variable have a numerical value higher than 0.
+// Found solution below.
 // https://stackoverflow.com/questions/68308011/looking-for-a-way-to-calculate-2-of-3-input-fields-in-realtime-using-javascript
-
 function tipCalculator(cost, percent, number) {
     if (cost > 0 && percent > 0 && number > 0) {
         resetButton.classList.remove('tinted');
@@ -74,30 +65,36 @@ function tipCalculator(cost, percent, number) {
         totalSpan.innerHTML = "$" + totalPerson;
         console.log("Tip amount / person is " + tipPerson);
         console.log("Total / person is " + totalPerson);
-        resetButton.addEventListener('click', function (event) {
-            event.preventDefault();
+        // resets form of styling and numerical values
+        resetButton.addEventListener('click', function () {
+            removeButtonStyles();
+            tipForm.reset();
             resetButton.classList.add('tinted');
             tipSpan.innerHTML = "$" + "0.00";
             totalSpan.innerHTML = "$" + "0.00";
-            cost.value = 0;
-            percent.value = 0;
-            number.value = 0;
-            // working here last.
-            // possible solution is to make reset button
-            // an input with type reset
+            billValue = 0;
+            btnValue = 0;
+            customValue = 0;
+            peopleValue = 0;
         });
     }
 }
 
-// get numerical value of bill input
-
+// Get numberical value of bill input.
+// Also toggles error validation styling for input.
 bill.addEventListener('input', function () {
     billValue = parseFloat(bill.value);
-    tipCalculator(billValue, btnValue, peopleValue);
+    if (billValue > 0) {
+        bill.classList.remove('border-error');
+        billInputError.style = 'display: none;';
+        tipCalculator(billValue, btnValue, peopleValue);
+    } else if (billValue <= 0) {
+        bill.classList.add('border-error');
+        billInputError.style = 'display: initial;';
+    }
 });
 
-// get numerical value of button input
-
+// Get numerical value of button input.
 for (let i = 0; i < buttonsList.length; i++) {
     buttonsList[i].addEventListener('click', function (event) {
         event.preventDefault();
@@ -108,17 +105,30 @@ for (let i = 0; i < buttonsList.length; i++) {
     });
 }
 
-// get numberical value of people input
-const people = document.querySelector("#people");
+// Get numberical value of people input.
+// Also toggles error validation styling for input.
 people.addEventListener('input', function () {
     peopleValue = parseFloat(people.value);
-    tipCalculator(billValue, btnValue, peopleValue);
+    if (peopleValue > 0) {
+        people.classList.remove('border-error');
+        peopleInputError.style = 'display: none;';
+        tipCalculator(billValue, btnValue, peopleValue);
+    } else if (peopleValue <= 0) {
+        people.classList.add('border-error');
+        peopleInputError.style = 'display: initial;';
+    }
 });
 
-// get numerical value of custom input
-
+// Get numerical value of custom input.
 customButton.addEventListener('input', function () {
     customValue = parseFloat(customButton.value);
     customValue = (customValue / 100);
     tipCalculator(billValue, customValue, peopleValue);
 });
+
+// When custom button is clicked it activates a function that makes all other buttons
+// with styling classes gets those classes removed.
+// learned to not put () after the name of your own function inside
+// the event listener solution found below
+// https://stackoverflow.com/questions/70920592/why-does-a-javascript-event-listener-function-need-to-be-wrapped-in-function-tag
+customButton.addEventListener('click', removeButtonStyles);
