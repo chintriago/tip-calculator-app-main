@@ -279,7 +279,7 @@ https://stackoverflow.com/questions/917610/put-icon-inside-input-element-in-a-fo
  input field is right aligned.
 https://stackoverflow.com/questions/6729837/text-align-right-only-for-placeholder */
 .cust-btn:focus {
-    text-align: right;
+    text-align: middle;
 }
 
 .cust-btn::placeholder {
