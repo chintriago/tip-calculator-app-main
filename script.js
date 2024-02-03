@@ -63,8 +63,6 @@ function tipCalculator(cost, percent, number) {
         totalPerson = totalPerson.toFixed(2);
         tipSpan.innerHTML = "$" + tipPerson;
         totalSpan.innerHTML = "$" + totalPerson;
-        console.log("Tip amount / person is " + tipPerson);
-        console.log("Total / person is " + totalPerson);
         // resets form of styling and numerical values
         resetButton.addEventListener('click', function () {
             removeButtonStyles();
